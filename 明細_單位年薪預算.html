@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>單位年薪預算明細</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="css/elegant-fonts.css">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!--===============================================================================================-->  
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+    <style type="text/css">
+        #nav{
+            padding: 0 32px; 
+            display: flex; /*使container在同一行*/
+            justify-content: space-between;  /*左右*/
+        }
+        
+        ul.drop-down-menu {
+            list-style: none; /*把表格的點拿掉*/
+            display: flex; /*使他在同一行*/
+        }
+
+        ul.drop-down-menu li {
+            display: flex; /*置中?*/
+        }
+        ul.drop-down-menu li {
+            text-decoration: none;
+            padding: 0 4px;
+            margin: 12px 8px;
+            color: #787785;
+            font-weight: bold;
+            text-transform: capitalize; /*把字首改成大寫*/
+            position: relative; /*因為::after是絕對定位，因此要在此加上相對定位*/
+        }
+        ul.drop-down-menu li::after {
+            content: '';
+            min-width: 0%;
+            height: 2px;
+            background-color: #787785;
+            position: absolute;
+            left: 6px;
+            bottom: -6px;
+            transition: min-width 0.3s ease;
+        }
+        /*下面的底線*/
+        ul.drop-down-menu li::after {
+            content: '';
+            position: absolute; /*定位，absolute絕對定位，不會隨著移動而移動; relative會隨著移動而移動;*/
+            left: 6px;          /*若after用絕對定位，則前面的要加上相對定位*/
+            bottom: -6px;
+            height: 2px;
+            min-width: 0%; /*最小寬度*/
+            background-color: #787785;
+            transition: min-witdh 0.3 sec; /*花費0.3秒成長寬度*/
+        }
+        ul.drop-down-menu li:hover::after {
+            min-width: 50%; /*成長後的寬度*/
+        }
+        ul.logg{
+            display: flex;
+            align-items: center;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        #log{
+            align-items: center;
+            display: flex;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+    <div id="nav" style="background-color:#242428;">
+        <div class="site-branding">
+            <h1 class="site-title"><img src="images/logo.jpg" alt="" style="width: 70px;"> <a href="index.html" rel="home">輔仁大學管理學院<br></h1>
+              <span style="font-size:30px"><font color="white" >空間預借系統</font></span> 
+        </div><!-- .site-branding -->
+        
+    </div>
+    <div id="nav" style="background-color:#242428;">
+        
+        <div id="log"  style="background-color:#242428;;">
+            <font color="white"><b>輔仁大學管理學院&nbsp; | &nbsp;</b>
+                <b>聯絡我們</b>&nbsp; | &nbsp;&nbsp;
+                <b><a href="index.html" style="color: white;">回首頁</a></b></font>
+            
+        </div>
+    </div>
+    <div id="main">
+        <div class="container" id="upload">
+            <h5 align="center">
+                <form name="form">
+                    <br>
+                    輔仁大學
+                    <select>
+                        <option value="109單位年薪預算">109
+                        <option value="110單位年薪預算" selected>110
+                        <option value="111單位年薪預算">111
+                    </select>
+                    學年度人事費預算編列明細表
+                </form>
+            </h5>
+            <iframe src="iframe單位年薪預算110.html" id="frame薪資預算" frameborder="0" width="100%" height="600px"></iframe>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/swiper.min.js'></script>
+    <script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
+    <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
+</body>
+</html>

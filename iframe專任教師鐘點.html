@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0518作業</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            $('#gamer').DataTable( {
+                order: [[ 3, 'desc' ], [ 0, 'asc' ]]
+            } );
+        } );
+    </script>
+    <style>
+        .header{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3 align="left"><b>專任教職員</b></h3>
+        &emsp;
+        <a href="iframe新增_專任教師鐘點.html"><input type="button" value="新增"></a>
+    </div>
+    <table id="gamer" class="table table-hover display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>是否為本系專任教師</th>
+                <th>職級</th>
+                <th>鐘點數小計</th>
+                <th>主管行政(減授)鐘點小計</th>
+                <th>超鐘點數小計</th>
+                <th>超鐘點費</th>
+                <th>修改/刪除</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">張三</td>
+                <td align="center">是</td>
+                <td align="center">教授</td>
+                <td align="center">16</td>
+                <td align="center">16.000</td>
+                <td align="center">0.000</td>
+                <td align="center">0</td>
+                <td align="center">
+                    <a href="iframe修改_專任教師鐘點.html"><input type="button" value="修改"></a>
+                    <input type="button" value="刪除" onclick="delRow()">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

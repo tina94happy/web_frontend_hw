@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>修改單位年薪預算</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="css/elegant-fonts.css">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!--===============================================================================================-->  
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+</head>
+<body>
+    <div id="main">
+        <div class="contact-page">
+            <div class="container" id="upload">
+                <br><h3 align="center">修改</h3>
+            </div>
+            <div class="team-member" >
+                <table id="example" class="table table-hover display" cellspacing="0" width="100%">
+                    <thead>
+                        <h3 align="left"><b>教職員</b></h3>
+                    </thead>
+                    <tbody>
+                        <form>
+                        <tr>
+                            <td><b>姓名</b></td>
+                            <td><input type="text" name = "姓名" placeholder="姓名"></td>
+                        </tr>
+                        <tr>
+                            <td><b>職級</b></td>
+                            <td>
+                                <select name="職級">
+                                    <optgroup label="主管身分">
+                                        <option value="校長">校長</option>
+                                        <option value="校牧">校牧</option>
+                                        <option value="副校長">副校長</option>
+                                        <option value="主任秘書">主任秘書</option>
+                                        <option value="主任">主任</option>
+                                        <option value="學務長">學務長</option>
+                                    </optgroup>
+                                    <optgroup label="一般教師">
+                                        <option value="教授">教授</option>
+                                        <option value="副教授">副教授</option>
+                                        <option value="助理教授">助理教授</option>
+                                        <option value="講師">講師</option>
+                                        <option value="專案教學人員培儲型">專案教學人員培儲型</option>
+                                        <option value="專案教學人員教學型">專案教學人員教學型</option>
+                                        <option value="講座教授">講座教授</option>
+                                    </optgroup>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>職級俸點</b></td>
+                            <td><input type="text" name = "職級俸點" placeholder="職級俸點"></td>
+                        </tr>
+                        <tr>
+                            <td><b>年支領月數</b></td>
+                            <td><input type="number" name="年支領月數" step="0.5" value="13.5"></td>
+                        </tr>
+                        <tr>
+                            <td><b>預算類別</b></td>
+                            <td>
+                                <input type="radio" name="預算類別" value="專任" checked>專任職員
+                                &emsp;
+                                <input type="radio" name="預算類別" value="兼任">兼任職員
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>隸屬單位</b></td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>公健/勞健</b></td>
+                            <td>
+                                <input type="radio" name="公健/勞健" value="公健" checked>公健
+                                &emsp;
+                                <input type="radio" name="公健/勞健" value="勞健">勞健
+                            </td>
+                        </tr>
+                        </form>
+                    </tbody>
+                </table>
+            </div><!--team-member-->
+            <div class="team-member" >
+                <table id="example" class="table table-hover display" cellspacing="0" width="100%">
+                    <thead>
+                        <h3 align="left"><b>主管津貼</b></h3>
+                    </thead>
+                    <tbody>
+                        <form>
+                        <tr>
+                            <td><b>主管特支費</b></td>
+                            <td><input type="text" name = "主管特支費" placeholder="主管特支費"></td>
+                        </tr>
+                        </form>
+                    </tbody>
+                </table>
+            </div><!--team-member-->
+            <div class="team-member" >
+                <table id="example" class="table table-hover display" cellspacing="0" width="100%">
+                    <thead>
+                        <h3 align="left"><b>其他津貼</b></h3>
+                    </thead>
+                    <tbody>
+                        <form>
+                        <tr>
+                            <td><b>夜間津貼</b></td>
+                            <td><input type="text" name = "夜間津貼" placeholder="夜間津貼"></td>
+                        </tr>
+                        <tr>
+                            <td><b>工作津貼</b></td>
+                            <td><input type="text" name = "工作津貼" placeholder="工作津貼"></td>
+                        </tr>
+                        <tr>
+                            <td><b>子女補助</b></td>
+                            <td><input type="text" name = "子女補助" placeholder="子女補助"></td>
+                        </tr>
+                        <tr>
+                            <td><b>其他收入</b></td>
+                            <td><input type="text" name = "其他收入" placeholder="其他收入"></td>
+                        </tr>
+                        </form>
+                    </tbody>
+                </table>
+            </div><!--team-member-->
+        </div><!-- .container -->
+
+        <div style="text-align:center">
+            <br>
+            <form action="iframe單位年薪預算110.html">
+                <input id="sub" type="submit" value="儲存">
+            </form>
+            <style>
+                #sub{
+                    background-color: #787785;
+                    border: 0px;
+                    padding: 8px 32px;
+                    border-radius: 100px; /*圓角外框*/
+                    font-size: 20px; /*文字大小*/
+                    margin: 0 12px;
+                    color: white;
+                    cursor: pointer;
+                    transition: all 0.3 ease; /*花費0.3秒成長寬度*/
+                }
+                #sub:hover {
+                    padding: 8px 40px;
+                    background-color: #787785;
+                }
+            </style>
+        </div>
+    </div>
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/swiper.min.js'></script>
+    <script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
+    <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
+</body>
+</html>

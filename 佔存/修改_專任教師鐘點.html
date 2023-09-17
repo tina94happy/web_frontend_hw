@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>修改單位年薪預算</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="css/elegant-fonts.css">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!--===============================================================================================-->  
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<style type="text/css">
+    #header{
+        padding: 0 32px; 
+        display: flex; /*使container在同一行*/
+        justify-content: space-between;  /*左右*/
+    }
+    
+    ul.drop-down-menu {
+        list-style: none; /*把表格的點拿掉*/
+        display: flex; /*使他在同一行*/
+    }
+
+    ul.drop-down-menu li {
+        display: flex; /*置中?*/
+    }
+    ul.drop-down-menu li {
+        text-decoration: none;
+        padding: 0 4px;
+        margin: 12px 8px;
+        color: #787785;
+        font-weight: bold;
+        text-transform: capitalize; /*把字首改成大寫*/
+        position: relative; /*因為::after是絕對定位，因此要在此加上相對定位*/
+    }
+    ul.drop-down-menu li::after {
+        content: '';
+        min-width: 0%;
+        height: 2px;
+        background-color: #787785;
+        position: absolute;
+        left: 6px;
+        bottom: -6px;
+        transition: min-width 0.3s ease;
+    }
+    /*下面的底線*/
+    ul.drop-down-menu li::after {
+        content: '';
+        position: absolute; /*定位，absolute絕對定位，不會隨著移動而移動; relative會隨著移動而移動;*/
+        left: 6px;          /*若after用絕對定位，則前面的要加上相對定位*/
+        bottom: -6px;
+        height: 2px;
+        min-width: 0%; /*最小寬度*/
+        background-color: #787785;
+        transition: min-witdh 0.3 sec; /*花費0.3秒成長寬度*/
+    }
+    ul.drop-down-menu li:hover::after {
+        min-width: 50%; /*成長後的寬度*/
+    }
+    ul.logg{
+        display: flex;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+    <div id="header" style="background-color: #F9F8F8;">
+        <ul class="drop-down-menu">
+            <li><a href="明細_單位年薪預算.html" style="text-decoration:none">單位年薪預算明細</a></li>
+            <li><a href="專任教師鐘點.html" style="text-decoration:none">專任教師鐘點計算</a></li>
+            <li><a href="course.html" style="text-decoration:none">兼任教師鐘點計算</a></li>
+            <li><a href="blog.html" style="text-decoration:none">預算彙總表</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <div class="contact-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumbs">
+                            <ul class="flex flex-wrap align-items-center p-0 m-0">
+                                <li><a href="index.html"><i class="fa fa-home"></i> 首頁</a></li>
+                                <li><a href="專任教師鐘點.html">專任教師鐘點計算</a></li>
+                                <li>修改專任教師鐘點</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="upload">
+                <h3>修改專任教師鐘點</h3>
+                <div class="team-member" >
+                    <table id="example" class="table table-hover display" cellspacing="0" width="100%">
+                        <thead>
+                            <h3 align="left" colspam="2"><b>專任教職員</b></h3>
+                        </thead>
+                        <tbody>
+                            <form>
+                            <tr>
+                                <td><b>姓名</b></td>
+                                <td><input type="text" name = "姓名" placeholder="姓名"></td>
+                            </tr>
+                            <tr>
+                                <td><b>系所名稱</b></td>
+                                <td>
+                                    <select name="系所名稱">
+                                        <optgroup label="藝術學院">
+                                            <option value="音樂學系">音樂學系</option>
+                                            <option value="應用美術學系">應用美術學系</option>
+                                            <option value="景觀設計學系">景觀設計學系</option>
+                                        </optgroup>
+                                        <optgroup label="文學院">
+                                            <option value="中國文學系">中國文學系</option>
+                                            <option value="歷史學系">歷史學系</option>
+                                            <option value="哲學系">哲學系</option>
+                                        </optgroup>
+                                        <optgroup label="醫學院">
+                                            <option value="護理學系">護理學系</option>
+                                            <option value="公共衛生學系">公共衛生學系</option>
+                                            <option value="醫學系">醫學系</option>
+                                            <option value="臨床心理學系">臨床心理學系</option>
+                                            <option value="職能治療學系">職能治療學系</option>
+                                            <option value="呼吸治療學系">呼吸治療學系</option>
+                                        </optgroup>
+                                        <optgroup label="外國語文學院">
+                                            <option value="英國語文學系">英國語文學系</option>
+                                            <option value="法國語文學系">法國語文學系</option>
+                                            <option value="西班牙語文學系">西班牙語文學系</option>
+                                            <option value="日本語文學系">日本語文學系</option>
+                                            <option value="義大利語文學系">義大利語文學系</option>
+                                            <option value="德語語文學系">德語語文學系</option>
+                                        </optgroup>
+                                        <optgroup label="民生學院">
+                                            <option value="餐旅管理學系">餐旅管理學系</option>
+                                            <option value="兒童與家庭學系">兒童與家庭學系</option>
+                                            <option value="食品科學系">食品科學系</option>
+                                            <option value="營養科學系">營養科學系</option>
+                                        </optgroup>
+                                        <optgroup label="傳播學院">
+                                            <option value="影像傳播學系">影像傳播學系</option>
+                                            <option value="新聞傳播學系">新聞傳播學系</option>
+                                            <option value="廣告傳播學系">廣告傳播學系</option>
+                                        </optgroup>
+                                        <optgroup label="法律學院">
+                                            <option value="法律學系">法律學系</option>
+                                            <option value="財經法律學系">財經法律學系</option>
+                                            <option value="學士後法律學系">學士後法律學系</option>
+                                        </optgroup>
+                                        <optgroup label="教育學院">
+                                            <option value="圖書資訊學系">圖書資訊學系</option>
+                                            <option value="體育學系體育學組">體育學系體育學組</option>
+                                            <option value="體育學系運動競技組">體育學系運動競技組</option>
+                                            <option value="體育學系運動健康管理組">體育學系運動健康管理組</option>
+                                        </optgroup>
+                                        <optgroup label="管理學院">
+                                            <option value="企業管理學系">企業管理學系</option>
+                                            <option value="金融與國際企業學系">金融與國際企業學系</option>
+                                            <option value="會計學系">會計學系</option>
+                                            <option value="資訊管理學系">資訊管理學系</option>
+                                            <option value="統計資訊學系">統計資訊學系</option>
+                                        </optgroup>
+                                        <optgroup label="理工學院">
+                                            <option value="數學系純數學組">數學系純數學組</option>
+                                            <option value="數學系應用數學組">數學系應用數學組</option>
+                                            <option value="化學系">化學系</option>
+                                            <option value="資訊工程學系">資訊工程學系</option>
+                                            <option value="生命科學系">生命科學系</option>
+                                            <option value="物理學系物理組">物理學系物理組</option>
+                                            <option value="物理學系光電物理組">物理學系光電物理組</option>
+                                            <option value="電機工程學系">電機工程學系</option>
+                                        </optgroup>
+                                        <optgroup label="社會科學院">
+                                            <option value="心理學系">心理學系</option>
+                                            <option value="社會學系">社會學系</option>
+                                            <option value="社會工作學系">社會工作學系</option>
+                                            <option value="經濟學系">經濟學系</option>
+                                            <option value="宗教學系">宗教學系</option>
+                                        </optgroup>
+                                        <optgroup label="織品服裝學院">
+                                            <option value="織品服裝學系織品設計組">織品服裝學系織品設計組</option>
+                                            <option value="織品服裝學系織品服飾行銷組">織品服裝學系織品服飾行銷組</option>
+                                            <option value="織品服裝學系服飾設計組">織品服裝學系服飾設計組</option>
+                                        </optgroup>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>是否為本系專任教師</b></td>
+                                <td>
+                                    <input type="radio" name="是否本系專任教師" value="是">是
+                                    &emsp;
+                                    <input type="radio" name="是否本系專任教師" value="否">否
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>職級</b></td>
+                                <td>
+                                    <select name="職級">
+                                        <optgroup label="主管身分">
+                                            <option value="校長">校長</option>
+                                            <option value="校牧">校牧</option>
+                                            <option value="副校長">副校長</option>
+                                            <option value="主任秘書">主任秘書</option>
+                                            <option value="主任">主任</option>
+                                            <option value="學務長">學務長</option>
+                                        </optgroup>
+                                        <optgroup label="一般教師">
+                                            <option value="教授">教授</option>
+                                            <option value="副教授">副教授</option>
+                                            <option value="助理教授">助理教授</option>
+                                            <option value="講師">講師</option>
+                                            <option value="專案教學人員培儲型">專案教學人員培儲型</option>
+                                            <option value="專案教學人員教學型">專案教學人員教學型</option>
+                                            <option value="講座教授">講座教授</option>
+                                        </optgroup>
+                                    </select>
+                                </td>
+                            </tr>
+                            </form>
+                        </tbody>
+                    </table>
+                </div><!--team-member-->
+                <div class="team-member">
+                    <table id="example" class="table table-hover display" cellspacing="0" width="100%">
+                        <thead>
+                            <h3 align="left"  colspam="2"><b>已輸入授課資訊</b></h3>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>授課科目</th>
+                                <th>上/下學期</th>
+                                <th>學分數</th>
+                            </tr>
+                            <tr>
+                                <td>民法總則</td>
+                                <td>上</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>民法物權(一)</td>
+                                <td>上</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>民法物權(二)</td>
+                                <td>下</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="team-member">
+                    <table id="example" class="table table-hover display" cellspacing="0" width="100%">
+                        <thead>
+                            <h3 align="left"  colspam="2"><b>新增授課科目</b></h3>
+                        </thead>
+                        <tbody>
+                            <form>
+                            <tr>
+                                <td><b>授課科目</b></td>
+                                <td>
+                                    <input type="text" name = "授課科目" placeholder="授課科目">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>上/下學期</b></td>
+                                <td>
+                                    <input type="radio" name="學期" value="上">上
+                                    &emsp;
+                                    <input type="radio" name="學期" value="下">下
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>學分數</b></td>
+                                <td>
+                                    <input type="number" name="學分數" step="1" value="2" min="1" max="8">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="button" value="新增"></td>
+                            </tr>
+                        </form>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- .container -->
+        </div><!-- .container -->
+
+        <div style="text-align:center">
+            <br>
+            <input id="sub" type="submit" value="儲存">
+            <style>
+                #sub{
+                    background-color: #787785;
+                    border: 0px;
+                    padding: 8px 32px;
+                    border-radius: 100px; /*圓角外框*/
+                    font-size: 20px; /*文字大小*/
+                    margin: 0 12px;
+                    color: white;
+                    cursor: pointer;
+                    transition: all 0.3 ease; /*花費0.3秒成長寬度*/
+                }
+                #sub:hover {
+                    padding: 8px 40px;
+                    background-color: #787785;
+                }
+            </style>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
+                        <div class="foot-contact">
+                            <h2>聯絡資訊</h2>
+                            <ul>
+                                <li>Email: info.deertcreative@gmail.com</li>
+                                <li>Phone: (+88) 111 555 666</li>
+                                <li>Address:<br>輔仁大學伯達樓6F</li>
+                            </ul>
+                        </div><!-- .foot-contact -->
+                    </div><!-- .col -->
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0">
+                        <div class="quick-links flex flex-wrap">
+                            <h2 class="w-100">Quick Links</h2>
+                            <ul class="w-50">
+                                <li><a href="aboutsite.html">關於本站 </a></li>
+                            </ul>
+                        </div><!-- .quick-links -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-widgets -->
+    </footer><!-- .site-footer -->
+
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/swiper.min.js'></script>
+    <script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
+    <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
+</body>
+</html>

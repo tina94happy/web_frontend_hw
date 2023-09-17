@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>首頁</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="css/elegant-fonts.css">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!--===============================================================================================-->  
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+    <style type="text/css">
+        #nav{
+            padding: 0 32px; 
+            display: flex; /*使container在同一行*/
+            justify-content: space-between;  /*左右*/
+        }
+        
+        ul.drop-down-menu {
+            list-style: none; /*把表格的點拿掉*/
+            display: flex; /*使他在同一行*/
+        }
+
+        ul.drop-down-menu li {
+            display: flex; /*置中?*/
+        }
+        ul.drop-down-menu li {
+            text-decoration: none;
+            padding: 0 4px;
+            margin: 12px 8px;
+            color: #787785;
+            font-weight: bold;
+            text-transform: capitalize; /*把字首改成大寫*/
+            position: relative; /*因為::after是絕對定位，因此要在此加上相對定位*/
+        }
+        ul.drop-down-menu li::after {
+            content: '';
+            min-width: 0%;
+            height: 2px;
+            background-color: #787785;
+            position: absolute;
+            left: 6px;
+            bottom: -6px;
+            transition: min-width 0.3s ease;
+        }
+        /*下面的底線*/
+        ul.drop-down-menu li::after {
+            content: '';
+            position: absolute; /*定位，absolute絕對定位，不會隨著移動而移動; relative會隨著移動而移動;*/
+            left: 6px;          /*若after用絕對定位，則前面的要加上相對定位*/
+            bottom: -6px;
+            height: 2px;
+            min-width: 0%; /*最小寬度*/
+            background-color: #787785;
+            transition: min-witdh 0.3 sec; /*花費0.3秒成長寬度*/
+        }
+        ul.drop-down-menu li:hover::after {
+            min-width: 50%; /*成長後的寬度*/
+        }
+        ul.logg{
+            display: flex;
+            align-items: center;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        #log{
+            align-items: center;
+            display: flex;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+    <div class="hero-content-overlay" style="background: #787785;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
+                        <header class="entry-header">
+                            <h1>輔仁大學人事預算系統</h1><br>
+                        </header><!-- .entry-header -->
+                        <form action="login.html">
+                            <input type="submit" id="sub" value="登入">
+                        </form>
+                        <style>
+                            #sub{
+                                background-color: white;
+                                border: 0px;
+                                padding: 12px 28px;
+                                border-radius: 100px; /*圓角外框*/
+                                font-size: 20px; /*文字大小*/
+                                margin: 0 12px;
+                                color: #787785;
+                                cursor: pointer;
+                                transition: all 0.3 ease; /*花費0.3秒成長寬度*/
+                            }
+                            #sub:hover {
+                                padding: 12px 32px;
+                                background-color: white;
+                            }
+                        </style>
+                    </div><!-- .hero-content-wrap -->
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .hero-content-hero-content-overlay -->
+
+    <footer class="site-footer">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-12 col-md-6 col-lg-4 mt-5 mt-md-0">
+                        <div class="foot-contact">
+                            <ul>
+                                <li><img src="images/輔大大門.jpg" width="300px" height="150px">
+                                </li>
+                            </ul>
+                        </div><!-- .foot-contact -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-4 mt-5 mt-md-0">
+                        <div class="foot-contact">
+                            <ul>
+                                <li>天主教輔仁大學<br>
+                                    24205 新北市新莊區中正路510號
+                                </li>
+                                <li>教職員工愛校建言信箱<br>
+                                    @mail.fju.edu.tw<br>
+                                    教職員工性騷擾申訴信箱<br>
+                                    protect@mail.fju.edu.tw
+                                </li>
+                            </ul>
+                        </div><!-- .foot-contact -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
+                        <div class="quick-links flex flex-wrap">
+                            <ul class="w-50">
+                                <li>服務櫃台：野聲樓3樓 (依照學校作息)<br>
+                                    服務電話：02-29052281<br>
+                                    傳真電話：02-29086210
+                                </li>
+                                <li>
+                                    服務信箱：person@mail.fju.edu.tw
+                                </li>
+                            </ul>
+
+                            
+                        </div><!-- .quick-links -->
+                    </div><!-- .col -->
+
+                    
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-widgets -->
+
+        
+    </footer><!-- .site-footer -->
+
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/swiper.min.js'></script>
+<script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
+<script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
+<script type='text/javascript' src='js/custom.js'></script>
+
+</body>
+</html>

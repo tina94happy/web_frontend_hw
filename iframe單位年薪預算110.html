@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            $('#gamer').DataTable( {
+                order: [[ 3, 'desc' ], [ 0, 'asc' ]]
+            } );
+        } );
+    </script>
+    <style>
+        .header{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3 align="left"><b>教職員</b></h3>
+        &emsp;
+        <a href="iframe新增_單位年薪預算.html"><input type="button" value="新增"></a>
+    </div>
+    <table id="gamer" class="table table-hover display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>職級</th>
+                <th>薪資預算</th>
+                <th>主管津貼(其他津貼)</th>
+                <th>健保校付</th>
+                <th>公保/勞保校付</th>
+                <th>退撫校付</th>
+                <th>全年總計</th>
+                <th>修改/刪除</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">張三</td>
+                <td align="center">主任</td>
+                <td align="center">357400</td>
+                <td align="center">26470</td>
+                <td align="center"></td>
+                <td align="center">公健</td>
+                <td align="center"></td>
+                <td align="center">357400</td>
+                <td align="center">
+                    <a href="iframe修改_單位年薪預算.html"><input type="button" value="修改"></a>
+                    <input type="button" value="刪除" onclick="delRow()">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

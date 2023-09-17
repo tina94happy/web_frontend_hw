@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>單位年薪預算明細</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="css/elegant-fonts.css">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!--===============================================================================================-->  
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<style type="text/css">
+    #nav{
+        padding: 0 32px; 
+        display: flex; /*使container在同一行*/
+        justify-content: space-between;  /*左右*/
+    }
+    
+    ul.drop-down-menu {
+        list-style: none; /*把表格的點拿掉*/
+        display: flex; /*使他在同一行*/
+    }
+
+    ul.drop-down-menu li {
+        display: flex; /*置中?*/
+    }
+    ul.drop-down-menu li {
+        text-decoration: none;
+        padding: 0 4px;
+        margin: 12px 8px;
+        color: #787785;
+        font-weight: bold;
+        text-transform: capitalize; /*把字首改成大寫*/
+        position: relative; /*因為::after是絕對定位，因此要在此加上相對定位*/
+    }
+    ul.drop-down-menu li::after {
+        content: '';
+        min-width: 0%;
+        height: 2px;
+        background-color: #787785;
+        position: absolute;
+        left: 6px;
+        bottom: -6px;
+        transition: min-width 0.3s ease;
+    }
+    /*下面的底線*/
+    ul.drop-down-menu li::after {
+        content: '';
+        position: absolute; /*定位，absolute絕對定位，不會隨著移動而移動; relative會隨著移動而移動;*/
+        left: 6px;          /*若after用絕對定位，則前面的要加上相對定位*/
+        bottom: -6px;
+        height: 2px;
+        min-width: 0%; /*最小寬度*/
+        background-color: #787785;
+        transition: min-witdh 0.3 sec; /*花費0.3秒成長寬度*/
+    }
+    ul.drop-down-menu li:hover::after {
+        min-width: 50%; /*成長後的寬度*/
+    }
+    #log{
+            align-items: center;
+            display: flex;
+        }
+</style>
+</head>
+<body>
+    <div id="nav" style="background-color: #F9F8F8;">
+        <ul class="drop-down-menu">
+            <li><a href="明細_單位年薪預算.html" style="text-decoration:none">單位年薪預算明細</a></li>
+            <li><a href="專任教師鐘點.html" style="text-decoration:none">專任教師鐘點計算</a></li>
+            <li><a href="course.html" style="text-decoration:none">兼任教師鐘點計算</a></li>
+            <li><a href="blog.html" style="text-decoration:none">預算彙總表</a></li>
+        </ul>
+        <div id="log" style="white-space:nowrap">
+            <b><a href="index.html".html" style="text-decoration: none;">登出</a></b>
+        </div>
+    </div>
+        <div class="container" id="upload">
+            <br>
+            <script>
+                department=new Array();
+                department[1]=["音樂學系", "應用美術學系", "景觀設計學系"];
+                department[2]=["中國文學系", "歷史學系", "哲學系"];
+                department[3]=["護理學系", "公共衛生學系", "醫學系", "臨床心理學系", "職能治療學系", "呼吸治療學系"];
+                department[4]=["英國語文學系", "法國語文學系", "西班牙語文學系", "日本語文學系" , "義大利語文學系" , "德語語文學系"];
+                department[5]=["餐旅管理學系", "兒童與家庭學系", "食品科學系", "營養科學系"]
+                department[6]=["影像傳播學系", "新聞傳播學系", "廣告傳播學系"]
+                department[7]=["法律學系", "財經法律學系", "學士後法律學系"]
+                department[8]=["圖書資訊學系", "體育學系體育學組" , "體育學系運動競技組", "體育學系運動健康管理組"]
+                department[9]=["企業管理學系", "金融與國際企業學系", "會計學系", "資訊管理學系", "統計資訊學系"]
+                department[10]=["數學系純數學組", "數學系應用數學組", "化學系", "資訊工程學系", "生命科學系", "物理學系物理組", "物理學系光電物理組", "電機工程學系"]
+                department[11]=["心理學系", "社會學系", "社會工作學系", "經濟學系", "宗教學系"]
+                department[12]=["織品服裝學系織品設計組", "織品服裝學系織品服飾行銷組", "織品服裝學系服飾設計組"]
+
+                function renew(index){
+                    for(var i=0;i<department[index].length;i++)
+                        document.myForm.member.options[i]=new Option(department[index][i], department[index][i]);// 設定新選項
+                    document.myForm.member.length=department[index].length;	// 刪除多餘的選項
+                }
+            </script>
+            <form name="myForm">
+                學院名稱：
+                <select onChange="renew(this.selectedIndex);">
+                    <option value="">請選擇學院
+                    <option value="藝術學院">藝術學院
+                    <option value="文學院">文學院
+                    <option value="醫學院">醫學院
+                    <option value="外國語文學院">外國語文學院
+                    <option value="民生學院">民生學院
+                    <option value="傳播學院">傳播學院
+                    <option value="法律學院">法律學院
+                    <option value="教育學院">教育學院
+                    <option value="管理學院">管理學院
+                    <option value="理工學院">理工學院
+                    <option value="社會科學院">社會科學院
+                    <option value="織品服裝學院">織品服裝學院
+                </select>
+                &emsp;
+                系所名稱：
+                <select name="member">
+                    <option value="">請由左方選取學院
+                </select>
+            </form>
+            <br>
+            <h5 align="center">
+                <form name="form">
+                    輔仁大學
+                    <select>
+                        <option value="109單位年薪預算">109
+                        <option value="110單位年薪預算" selected>110
+                        <option value="111單位年薪預算">111
+                    </select>
+                    學年度專任教師鐘點費預算明細表
+                </form>
+            </h5>
+            <iframe id="mainiframe" width="100%" height="600" src="iframe專任教師鐘點.html"  frameborder="0" scrolling="auto"></iframe>
+            
+        </div>
+    </div>
+    
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/swiper.min.js'></script>
+    <script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
+    <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
+</body>
+</html>
